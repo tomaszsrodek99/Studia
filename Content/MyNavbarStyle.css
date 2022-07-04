@@ -1,0 +1,29 @@
+﻿.my-container {
+    font-weight: 600;
+    color: white;
+}
+
+.my-nav-item:hover {
+    border-top: 1px solid lightgreen;
+    -webkit-transition: 220ms all ease-in-out;
+}
+.active-item {
+    background: red;
+}
+.my-nav-item {
+    font-size: 18px;
+    margin-top: 13px;
+    margin-right: 23px;
+    cursor: pointer;
+}
+.no-padding {
+    padding: 0px;
+}
+.black-border-bottom {
+    border-bottom: 2px solid black;
+}
+.my-nav-bar {
+    background: rgba(18,25,41,0.65);
+    padding-bottom: 20px;
+    padding-top: 10px;
+}

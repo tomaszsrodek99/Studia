@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="31127c6d397742cba47696cb4a4c04dc" Name="Diagram1">
+        <EntityTypeShape EntityType="Context.Coach" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Context.Country" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Context.Match" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Context.Player" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Context.sysdiagrams" Width="1.5" PointX="14.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Context.Users" Width="1.5" PointX="7.625" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="Context.FK_Country_Coach" ManuallyRouted="false" />
+        <AssociationConnector Association="Context.FK_Match_Country1" ManuallyRouted="false" />
+        <AssociationConnector Association="Context.FK_Player_Country" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

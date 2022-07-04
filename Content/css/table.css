@@ -1,0 +1,159 @@
+﻿.my-table {
+    background: rgba(18,25,41,0.95);
+    color: white;
+    border: 2px solid black; 
+    box-shadow: 14px 15px 17px 1px rgba(0, 0, 0, 1);
+}
+.title {
+    text-align: center;
+    color: white;
+}
+
+.table1 {
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.div2 {
+    height: 600px;
+    overflow:auto;
+    overflow-x:hidden;
+}
+
+.tournament-div {
+    justify-content: center;
+}
+.tournament-table {
+float: left;
+margin: 20px;
+}
+.table-row {
+    border-bottom: 2px solid white;
+    color: white;
+}
+.left {
+    text-align: left;
+    color: yellow;
+    padding: 2px;
+}
+right {
+    text-align: right;
+    color: white;
+    padding: 2px;
+}
+
+
+/* Main styles */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+
+.text {
+    fill: url(#gr-radial);
+}
+
+svg {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    font: 35px Open Sans, Impact;
+    text-transform: uppercase;
+    margin: 0;
+}
+.label-tree {
+    height: 100%;
+    padding:10px;
+    width: 100%;
+    float:left;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    background: rgba(18,25,41,0.95);
+    color: white;
+    border: 2px solid black;
+    box-shadow: 11px -6px 31px 6px rgba(1, 2, 16, 1);
+}
+.div-tree {
+    width: 200px;
+    float: left;
+    margin-right: 60px;
+}
+.q-final {
+    margin-bottom: 30px;
+}
+.s-final {
+    margin-bottom: 50px;
+    border: 2px solid yellow;
+}
+.f-final {
+    border: 2px solid red;
+}
+.back-link {
+    float: left;
+    position: relative;
+    top: 10px;
+    margin-right: 25px;
+}
+.my-form {
+    background: #121929;
+    padding: 10px 30px 10px 30px;
+    border: 2px solid white;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+#myInput {
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    border: 1px solid black;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius: 5px;
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#table-wrapper {
+    position: relative;
+}
+
+#table-scroll {
+    height: 664px;
+    overflow: auto;
+    margin-top: 20px;
+}
+.login-input {
+    background: url(user.svg) no-repeat 8px center;
+    background-size: 22px;
+    background-color: white;
+    padding: 5px 10px 5px 40px;
+}
+.password-input {
+    background: url(padlock.svg) no-repeat 8px center;
+    background-size: 22px;
+    background-color: white;
+    padding: 5px 10px 5px 40px;
+}
+.sign-in {
+    background: url(user.svg) no-repeat left center;
+    background-size: 22px;
+    position: absolute;
+    border: none;
+    padding: 3mm;
+    
+}
+.sign-in:hover {
+        transform: rotate(360deg);
+        transition-duration: 1s;
+        background-size: 25px;
+
+}
+.search-bar {
+    background: url(search-icon.jpg) no-repeat left center;
+    background-size: 22px;
+    padding-left: 30px;
+    background-color: white;
+}
+
+
+
+
