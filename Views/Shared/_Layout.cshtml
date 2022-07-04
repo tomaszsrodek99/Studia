@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - moja aplikacja platformy ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <link rel="stylesheet" href="~/Content/css/site.css" />
+    <link rel="stylesheet" href="~/Content/css/MyNavbarStyle.css" />
+    <link rel="stylesheet" href="~/Content/css/table.css" />
+    <script src="~/Content/js/site.js"></script>
+</head>
+<body style="margin: 0px; padding: 0px;">
+    <nav class="navbar my-nav-bar navbar-expand-sm navbar-toggleable-sm black-border-bottom box-shadow mb-3 no-padding">
+        <div class="container my-container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color: white; font-size: 25px">Projekt - ST2</a>
+
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Tournament" asp-action="Index" style="color: red;">Goals</a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        @Html.ActionLink("Groups", "IndexGroup", "TournamentView", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        @Html.ActionLink("Matches", "UserIndex", "Matches", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        @Html.ActionLink("Teams", "Index", "Countries", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Tournament" asp-action="Index" style="color: red;">Tournament tree</a>
+                    </li>
+                    <li class="nav-item my-nav-item">
+                        <img class="sign-in" width="24" height="24" />@Html.ActionLink("Login", "LoginView", "Home", null, new { @class = "nav-link", @style = "margin-left: 30px;" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

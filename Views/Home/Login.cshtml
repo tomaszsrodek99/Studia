@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+@model ST1.Models.User
+<div class="col-md-offset-4 col-md-4" style="background: darkgray; border: 2px solid black">
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            <h4 style=" text-align: center">Login</h4>
+        </div>
+        <div class="form-group centerlook">
+            <label style="width:100px;">Login: </label>
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group centerlook">
+            <label style="width:100px;">Password:</label>
+            @Html.PasswordFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-danger" })
+
+        </div>
+        <div class="form-group text-danger">
+            @if (@ViewBag.NotValidUser != null)
+            {
+                <label> @ViewBag.NotValidUser</label>
+            }
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Zaloguj" class="btn btn-primary" />
+            @Html.ActionLink("Nie masz konta ? Zarejestruj się!", "Register", "Home", null, new { @class = "nav-link", @style = "margin-left: 25px;" })
+        </div>
+    }
+</div>

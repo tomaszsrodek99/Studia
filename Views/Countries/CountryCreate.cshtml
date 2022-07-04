@@ -1,0 +1,70 @@
+﻿@model ST1.Models.CountryModel
+
+@{
+    ViewBag.Title = "Country create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Country Create</title>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <div class="col-md-offset-3 col-md-6" style="background: darkgray; border: 2px solid black">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <h2 style=" text-align: center">Country</h2>
+                <h5><a href='javascript:history.go(-1)'>Back</a></h5>
+                <h5>@Html.ActionLink("Add new coach", "Create", "Coaches")</h5>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CoachID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-6">
+                        @Html.DropDownListFor(model => model.CoachID, new SelectList(ViewBag.Coach, nameof(ViewBag.Coach.CoachID), nameof(ViewBag.Coach.LastName)), new { @class = "text-danger" });
+                        @Html.ValidationMessageFor(model => model.CoachID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CountryName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.CountryName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CountryName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Grupa, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-6">
+                        @Html.DropDownListFor(model => model.Grupa, ViewBag.Group as SelectList, new { @class = "text-danger" });
+                        @Html.ValidationMessageFor(model => model.Grupa, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group text-danger">
+                    @if (@ViewBag.NotValidTeam != null)
+                    {
+                        <label> @ViewBag.NotValidTeam</label>
+                    }
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "AdminIndex")
+        </div>
+    </div>
+</body>
+</html>

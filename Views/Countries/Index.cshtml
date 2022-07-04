@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ST1.Context.Country>
+@{
+    ViewBag.Title = "Countries";
+}
+
+<h2 style="color: black;">National team list</h2>
+<input class="search-bar" type="text" id="myInput" onkeyup="searchCountryByName()" placeholder="Search by country name">
+<table id="searchTable" class="sortable table my-table">
+    <tr>
+        <th>
+            Country
+        </th>
+        <th>
+            Group
+        </th>
+        <th>
+            Coach first name
+        </th>
+        <th>
+            Coach last name
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grupa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coach.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coach.Lastname)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.CountryID })
+            </td>
+        </tr>
+    }
+
+</table>

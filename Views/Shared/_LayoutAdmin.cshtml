@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Projekt Programowanie Obiektowe</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <link rel="stylesheet" href="~/Content/css/site.css" />
+    <link rel="stylesheet" href="~/Content/css/MyNavbarStyle.css" />
+    <link rel="stylesheet" href="~/Content/css/table.css" />
+    <script src="~/Content/js/site.js"></script>
+</head>
+<body style="margin: 0px; padding: 0px;">
+    <header>
+        <nav class="navbar my-nav-bar navbar-expand-sm navbar-toggleable-sm black-border-bottom box-shadow mb-3 no-padding">
+            <div class="container my-container">
+                <a class="navbar-brand" asp-area="" asp-controller="Login" asp-action="MainPage" style="color: white; font-size: 25px">Projekt - ST2</a>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item my-nav-item">
+                            @Html.ActionLink("Coaches", "Index", "Coaches", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item my-nav-item">
+                            @Html.ActionLink("Teams", "AdminIndex", "Countries", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item my-nav-item">
+                            @Html.ActionLink("Matches", "Index", "Matches", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item my-nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Goals" style="color: red;">Goals list</a>
+                        </li>
+                        <li class="nav-item my-nav-item">
+                            <img class="sign-in" width="24" height="24" />@Html.ActionLink("Logout", "Index", "Home", null, new { @class = "nav-link", @style = "margin-left: 30px;" })
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @RenderSection("scripts", required: false)
+
+</body >
+</html >

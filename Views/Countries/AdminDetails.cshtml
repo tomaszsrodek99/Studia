@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ST1.Context.Player>
+@{
+    ViewBag.Title = "Country details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="color: black;">National team players list of @ViewBag.Country.CountryName</h2>
+<h5>@Html.ActionLink("Back to List", "AdminIndex")</h5>
+<input class="search-bar" type="text" id="myInput" onkeyup="searchPlayerByName()" placeholder="Search by player name">
+<table id="searchTable" class="table my-table">
+    <tr>
+        <th>
+            Player name
+        </th>
+        <th>
+            Age
+        </th>
+        <th>
+            Club
+        </th>
+        <th>
+            Position
+        </th>
+        <th>
+            @Html.ActionLink("Create new player", "CreatePlayer", "Players", new { id=Model.Select(x=>x.CountryID).First() })
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Club)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditPlayer", "Players", new { id = item.PlayerID }) |
+                @Html.ActionLink("Delete", "Delete", "Players", new { id = item.PlayerID }, new { onclick = "return confirm('Do you want to delete this player?');" })
+            </td>
+        </tr>
+    }
+
+</table>

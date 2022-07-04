@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ST1.Models.MatchModel>
+
+@{
+    ViewBag.Title = "Matches";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table id="searchTable" class="sortable table my-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MatchDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Home)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visitor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VisitorScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlayStage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PenaltyScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeScoreP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VisitorScoreP)
+            </th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatchDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Home)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visitor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VisitorScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayStage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PenaltyScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeScoreP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VisitorScoreP)
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
